@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "alarm.bat", 0, True
