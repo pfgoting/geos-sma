@@ -52,13 +52,14 @@ class MonitorThread(QtCore.QThread):
 
     def run(self):
         # Monitor changes in rawData folder
+        self.demo = 'DEMO1'
         self.path_to_watch = rawDataPath
-        self.before = dict ([(self.f, None) for self.f in os.listdir(self.path_to_watch) if '.evt' in self.f])
+        self.before = dict ([(self.f, None) for self.f in os.listdir(self.path_to_watch) if self.demo in self.f])
         print self.before
         state = True
         while state:
             time.sleep (3)
-            self.after = dict ([(self.f, None) for self.f in os.listdir(self.path_to_watch) if '.evt' in self.f])
+            self.after = dict ([(self.f, None) for self.f in os.listdir(self.path_to_watch) if self.demo in self.f])
             self.added = [self.f for self.f in self.after if not self.f in self.before]
             self.removed = [self.f for self.f in self.before if not self.f in self.after]
             if self.added:
