@@ -371,8 +371,8 @@ class Ui_MainWindow(QtGui.QMainWindow):
     def syncFiles(self):
         # Start syncing data files
         os.chdir(os.path.join(rootPath,'Syncme.v1.0'))
-        syncPath = os.path.join(rootPath,r'Syncme.v1.0\syncme.bat')
-        os.system('start syncme.bat')
+        syncPath = os.path.join(rootPath,r'Syncme.v1.0\syncme2.bat')
+        os.system('start syncme2.bat')
 
     def close(self):
         def kill_proc_tree(pid, including_parent=True):    
